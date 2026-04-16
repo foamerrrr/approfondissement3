@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Gift;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\GiftCreatedMail;
 
 class GiftController extends Controller
 {
@@ -27,7 +29,13 @@ class GiftController extends Controller
             'price' => 'required|decimal:0,2',
         ]);
 
-        Gift::create($validated);
+        // Création du cadeau
+        $gift = Gift::create($validated);
+
+        // Envoi de l'email
+        Mail::to('test@test.com')->send(
+            new GiftCreatedMail($gift->name, $gift->price)
+        );
 
         return redirect()->route('gifts.index');
     }
