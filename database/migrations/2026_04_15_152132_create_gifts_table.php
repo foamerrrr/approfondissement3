@@ -20,11 +20,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->timestamps();
         });
-
-        DB::statement('ALTER TABLE gifts ADD CONSTRAINT gifts_name_length_check CHECK (CHAR_LENGTH(name) BETWEEN 3 AND 50)');
-        DB::statement("ALTER TABLE gifts ADD CONSTRAINT gifts_url_protocol_check CHECK (url LIKE 'http://%' OR url LIKE 'https://%')");
     }
-
     /**
      * Reverse the migrations.
      */
