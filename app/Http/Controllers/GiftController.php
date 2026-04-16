@@ -45,10 +45,10 @@ class GiftController extends Controller
     public function update(Request $request, Gift $gift)
     {
         $validated = $request->validate([
-            'name' => 'required|min:3|max:50',
-            'url' => 'nullable|url|starts_with:http://,https://',
-            'details' => 'nullable',
-            'price' => 'required|numeric|regex:/^\d+(\.\d{1,2})?$/'
+            'name' => 'required|string|min:3|max:50',
+            'url' => 'nullable|url:http,https',
+            'details' => 'nullable|string',
+            'price' => 'required|decimal:0,2',
         ]);
 
         $gift->update($validated);
