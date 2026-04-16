@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('content')
 <h1>{{ $gift->name }}</h1>
 
 <p>Prix : {{ $gift->price }} €</p>

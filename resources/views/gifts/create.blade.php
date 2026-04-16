@@ -3,7 +3,6 @@
 @section('content')
 <h1>Ajouter un cadeau</h1>
 
-{{-- Affichage des erreurs globales --}}
 @if ($errors->any())
     <div style="color:red;">
         <ul>
@@ -17,7 +16,6 @@
 <form method="POST" action="{{ route('gifts.store') }}">
     @csrf
 
-    {{-- NAME --}}
     <div>
         <label for="name">Nom :</label><br>
         <input 
@@ -34,7 +32,6 @@
 
     <br>
 
-    {{-- URL --}}
     <div>
         <label for="url">URL :</label><br>
         <input 
@@ -51,7 +48,6 @@
 
     <br>
 
-    {{-- DETAILS --}}
     <div>
         <label for="details">Détails :</label><br>
         <textarea 
@@ -66,7 +62,6 @@
 
     <br>
 
-    {{-- PRICE --}}
     <div>
         <label for="price">Prix :</label><br>
         <input 
