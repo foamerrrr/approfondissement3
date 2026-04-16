@@ -5,8 +5,7 @@ use App\Models\Gift;
 use App\Http\Controllers\GiftController;
 
 Route::get('/', function () {
-    $gifts = Gift::all();
-    return view('welcome', compact('gifts'));
+    return redirect()->route('gifts.index');
 });
 
 Route::resource('gifts', GiftController::class);

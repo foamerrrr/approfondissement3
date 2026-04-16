@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <h1> Liste des cadeaux </h1>
 
 @foreach($gifts as $gift)
@@ -11,3 +13,5 @@
         <p>{{ $gift->details }}</p>
     @endif
 @endforeach
+
+@endsection

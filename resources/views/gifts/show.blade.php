@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <h1>{{ $gift->name }}</h1>
 
 <p>Prix : {{ $gift->price }} €</p>
@@ -11,3 +13,5 @@
 @endif
 
 <a href="{{ route('gifts.index') }}">Retour</a>
+
+@endsection
